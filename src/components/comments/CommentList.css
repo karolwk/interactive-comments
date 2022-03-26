@@ -1,0 +1,350 @@
+body {
+  font-size: 16px;
+  font-family: 'Rubik';
+  color: grey;
+  background-color: hsl(228, 33%, 97%);
+}
+
+/* GRID  */
+
+.comments {
+  background-color: hsl(228, 33%, 97%);
+  min-width: 200px;
+  max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment {
+  display: grid;
+  border-radius: 5px;
+  padding: 1em;
+  flex: 10;
+  grid-template-areas:
+    'top top'
+    'main  main'
+    'vote  reply';
+
+  margin: 0 auto 1em auto;
+
+  grid-gap: 1em;
+
+  background-color: hsl(0, 0%, 100%);
+}
+
+.add-comment {
+  background-color: white;
+  padding: 1em;
+  flex: 10;
+  margin: 0 auto 1em auto;
+}
+
+.add-comment form {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.add-comment form textarea {
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+
+.add-comment form button {
+  grid-row: 2;
+  grid-column: 3;
+}
+
+.add-comment form img {
+  grid-row: 2;
+  grid-column: 1;
+}
+.comment-wraper {
+  display: flex;
+}
+
+.comment-wraper ~ .comment-wraper > .comment-reply {
+  margin-top: -1em;
+}
+
+.comment-reply {
+  flex: 1 10px;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.user-info {
+  position: relative;
+  grid-area: top;
+}
+
+.vote {
+  grid-area: vote;
+  display: flex;
+  justify-content: space-around;
+  width: 5em;
+  border-radius: 5px;
+  background-color: rgb(245, 246, 250);
+}
+
+.content {
+  /*   background-color: purple; */
+  grid-area: main;
+}
+
+.replay-edit {
+  /*   background-color: green; */
+  grid-area: reply;
+  display: flex;
+  justify-content: right;
+  font-weight: 500;
+}
+
+.logged-user {
+  vertical-align: text-top;
+  line-height: 1.5em;
+  padding: 1px 0px 2px 3px;
+  border-radius: 2px;
+}
+
+/* FONTS AND COLORS */
+
+.add-comment {
+  border-radius: 5px;
+}
+.avatar {
+  margin-top: 1em;
+  width: 2em;
+}
+.comment a {
+  text-decoration: none;
+  color: hsl(238, 40%, 52%);
+}
+
+.user-info a {
+  margin: 0 0.5em 0 2em;
+  color: rgb(51, 58, 66);
+  font-weight: 500;
+}
+.user-info img {
+  position: absolute;
+  max-width: 1.5em;
+}
+
+.logged-user {
+  color: white;
+  font-size: 0.75em;
+  margin-right: 0.5em;
+
+  background-color: hsl(238, 40%, 52%);
+}
+.vote-btn {
+  background: rgb(245, 246, 250);
+}
+
+.vote .counter {
+  cursor: default;
+  color: rgb(87, 91, 162);
+  font-weight: 500;
+  font-size: 0.9em;
+  padding-top: 3px;
+
+  box-sizing: border-box;
+}
+.vote img:hover {
+  /* To change color of SVG we need to use filter method */
+  filter: brightness(0) saturate(100%) invert(36%) sepia(9%) saturate(3169%)
+    hue-rotate(199deg) brightness(94%) contrast(84%);
+}
+.voted {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(9%) saturate(3169%)
+    hue-rotate(199deg) brightness(94%) contrast(84%);
+}
+.vote .vote-up {
+  background-color: rgb(245, 246, 250);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px 5px;
+  padding: 4px;
+}
+.vote .vote-down {
+  background-color: rgb(245, 246, 250);
+  cursor: pointer;
+  border: none;
+  padding-bottom: 0.5em;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.submit-btn {
+  margin-top: 1em;
+  font-size: 12px;
+  font-weight: 700;
+  width: 6em;
+  padding: 0.75rem;
+  border: none;
+  background-color: rgb(87, 91, 162);
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: rgb(196, 198, 239);
+}
+
+.txtarea {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 1em 2em;
+  resize: none;
+}
+
+.txtarea:focus {
+  outline: none;
+  border: 1px solid rgb(93, 93, 127);
+}
+.replay-edit img {
+  width: 0.6em;
+}
+
+.replay-edit a:last-of-type {
+  margin-left: 1em;
+}
+
+.reply-link:hover {
+  filter: brightness(0) saturate(100%) invert(81%) sepia(21%) saturate(707%)
+    hue-rotate(201deg) brightness(100%) contrast(89%);
+}
+
+.delete-link:hover {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(81%) saturate(5613%)
+    hue-rotate(288deg) brightness(106%) contrast(99%);
+}
+
+/* CONTENT */
+
+.vertical-line {
+  border-left: 3px solid hsl(223, 19%, 93%);
+  margin-left: 50%;
+  flex: 1;
+}
+
+/* SPINER */
+
+.spin {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgb(196, 198, 239);
+  border-radius: 50%;
+  border-top-color: rgb(87, 91, 162);
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .comments {
+    max-width: 600px;
+  }
+
+  .comment {
+    grid-template-areas:
+      'vote top reply'
+      'vote main main'
+      'vote main main';
+  }
+
+  .comment-wraper > .add-comment {
+    min-width: 517px;
+  }
+
+  .content {
+    min-width: 526px;
+  }
+
+  .comment-wraper .content {
+    min-width: 475px;
+  }
+
+  .vote {
+    flex-direction: column;
+    padding: 1px;
+    justify-content: space-between;
+    text-align: center;
+
+    width: 1.5em;
+    height: 4em;
+  }
+
+  .vote-up {
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .vote .vote-down {
+    border-radius: 0px 0px 5px 5px;
+  }
+
+  /*   COMMENT FORM GRID */
+  .add-comment form {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    margin-bottom: 1em;
+  }
+  .add-comment form textarea {
+    grid-column: 2/3;
+    grid-row: 1/4;
+  }
+  .add-comment form button {
+    grid-row: 1;
+    grid-column: 3;
+  }
+  .add-comment form img {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  /* EDIT FORM */
+
+  .content .add-comment form {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    margin-bottom: 1em;
+  }
+
+  .content .add-comment form textarea {
+    grid-column: 1/3;
+    grid-row: 1/4;
+  }
+
+  .content .add-comment form button {
+    grid-row: 4;
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  /*   FONTS AND COLOR */
+
+  .submit-btn {
+    margin: 0.5em;
+    width: 6em;
+  }
+
+  .avatar {
+    margin-top: 0.5em;
+    margin-left: 2em;
+    width: 2em;
+  }
+
+  .txtarea {
+    margin-top: 0.5em;
+  }
+}
