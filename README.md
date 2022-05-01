@@ -49,4 +49,4 @@ After a lot of small projects I wrote in TypeScript and React, this one was firs
 
 ### Continued development
 
-I had some problems with state floating around components, mainly because I didn't use any global state solutions like Redux od Context System. In future projects I will surly give them a try.
+I had some problems with state floating around components mainly because I didn't use any global state solutions like Redux od Context System. In future projects I will surly give them a try.
